@@ -15,19 +15,33 @@ function chunk(array, size) {
    // }
    //  return chunked.concat([array])
 
-    const chunked = [];
+    // or
+    // chunked.push(array)
+    // return chunked
 
-    for ( let el of array ) {
-        const last = chunked[chunked.length - 1];
+    // const chunked = [];
+    //
+    // for ( let el of array ) {
+    //     const last = chunked[chunked.length - 1];
+    //
+    //     if(!last || last.length === size){
+    //         chunked.push([el])
+    //     }
+    //     else {
+    //         last.push(el)
+    //     }
+    // }
+    // return chunked
 
-        if(!last || last.length === size){
-            chunked.push([el])
-        }
-        else {
-            last.push(el)
-        }
+    const chunked = []
+    let index = 0;
+    while (index < array.length) {
+        chunked.push(array.slice(index, index + size))
+        index += size;
     }
-    return chunked
+
+    return chunked;
 }
+chunk([1, 2, 3, 4, 5, 6, 7, 8], 3)
 
 module.exports = chunk;
