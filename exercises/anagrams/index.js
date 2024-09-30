@@ -9,7 +9,6 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-
     const lettersOnlyA = stringA.replace(/\W/g,'').toLowerCase();
     const lettersOnlyB = stringB.replace(/\W/g,'').toLowerCase();
 
