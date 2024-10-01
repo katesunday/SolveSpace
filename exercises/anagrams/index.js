@@ -9,8 +9,12 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+
     const lettersOnlyA = stringA.replace(/\W/g,'').toLowerCase();
     const lettersOnlyB = stringB.replace(/\W/g,'').toLowerCase();
+
+    //возвращает число, указывающее, где должна находиться эта строка при сортировке
+    // (до, после или в том же самом месте, что и строка, переданная в качестве параметра).
 
     const sortedStringA = lettersOnlyA.split("").sort((a,b)=>{
        return  a.localeCompare(b)
