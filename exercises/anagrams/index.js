@@ -27,32 +27,42 @@
 //
 // }
 
+// function anagrams(stringA, stringB) {
+//
+//
+//   function buildCharMap(str) {
+//       const charMap = {};
+//
+//       for (let el of str.replace(/\W/g,'').toLowerCase()){
+//           charMap[el] = charMap[el] + 1 || 1
+//       }
+//
+//       return charMap;
+//   }
+//
+//     const aCharMap = buildCharMap(stringA)
+//     const bCharMap = buildCharMap(stringB)
+//
+//     if(Object.keys(aCharMap).length !== Object.keys(bCharMap).length){
+//         return false
+//     }
+//
+//     for (let el in aCharMap){
+//        if(  aCharMap[el] !== bCharMap[el]) {
+//            return false
+//        }
+//     }
+//     return true
+// }
+
 function anagrams(stringA, stringB) {
 
-
-  function buildCharMap(str) {
-      const charMap = {};
-
-      for (let el of str.replace(/\W/g,'').toLowerCase()){
-          charMap[el] = charMap[el] + 1 || 1
-      }
-
-      return charMap;
-  }
-
-    const aCharMap = buildCharMap(stringA)
-    const bCharMap = buildCharMap(stringB)
-
-    if(Object.keys(aCharMap).length !== Object.keys(bCharMap).length){
-        return false
+    function orderedString(str) {
+        return str.replace(/\W/g,'').toLowerCase().split('').sort().join('');
     }
 
-    for (let el in aCharMap){
-       if(  aCharMap[el] !== bCharMap[el]) {
-           return false
-       }
-    }
-    return true
+    return orderedString(stringA) === orderedString(stringB)
 }
+
 
 module.exports = anagrams;
