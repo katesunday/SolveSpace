@@ -7,6 +7,29 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
 
+    return str.split(" ").map((el)=> el[0].toUpperCase() + el.slice(1)).join(" ")
+
+
+    // const strArr = str.split(' ')
+    // const newArr = strArr.map((el)=>{
+    //     return el[0].toUpperCase() + el.slice(1)
+    // })
+    //
+    // return newArr.join(' ')
+
+
+   //  let result = '';
+   // for (let i = 0; i < str.length; i++) {
+   //     if(str[i] === " "){
+   //         result += " " + str[i+1].toUpperCase()
+   //         i++
+   //     } else{
+   //         result += str[i]
+   //     }
+   // }
+   // return result[0].toUpperCase() + result.slice(1);
+}
+capitalize('a lazy fox')
 module.exports = capitalize;
