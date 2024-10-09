@@ -35,24 +35,43 @@
 //     }
 // }
 
-function steps(n) {
+// function steps(n) {
+//
+//     for (let row = 0; row < n; row++) {
+//         let result = ""
+//
+//         for (let column = 0; column < n; column++) {
+//             if (column <= row){
+//                 result += '#'
+//             }
+//             else {
+//                 result += " "
+//             }
+//         }
+//         console.log(result)
+//     }
+//
+//
+// }
 
-    for (let i = 0; i < n; i++) {
-        let result = ""
-
-        for (let k = 0; k < n; k++) {
-            if (k <= i){
-                result += '#'
-            }
-            else {
-                result += " "
-            }
-        }
-        console.log(result)
+function steps(n, row = 0, stair = "") {
+    if (n === row){
+        return
     }
 
+    if (n === stair.length){
+        console.log(stair)
+        return steps(n, row +1)
+    }
 
+    if(stair.length <= row){
+        stair += "#"
+    }else{
+        stair+= " "
+    }
+    steps(n, row, stair)
 }
 
-steps(2)
+
+steps(4)
 module.exports = steps;
