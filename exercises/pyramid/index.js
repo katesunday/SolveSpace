@@ -30,7 +30,7 @@
 //     }
 // }
 
-function pyramid(n,row = 0, stair = "", col = 0) {
+function pyramid(n,row = 0, stair = "") {
     const midpoint = Math.floor((n*2-1)/2)
 
     if(n === row){
@@ -40,15 +40,12 @@ function pyramid(n,row = 0, stair = "", col = 0) {
         console.log(stair)
         return pyramid(n, row +1)
     }
-    while (col <= midpoint *2){
-        if(midpoint - row <= col && midpoint + row >= col){
+        if(midpoint - row <= stair.length && midpoint + row >= stair.length){
             stair += "#"
         }
         else{
             stair += " "
         }
-        col++
-    }
 
     pyramid(n, row, stair)
 }
