@@ -27,14 +27,14 @@ function matrix(n) {
     let endRow = n-1;
 
     while (startCol <= endCol && startRow <= endRow){
-        //слева направо до конца
+        //слева направо до конца и опуститься на уровень
         for (let i = startCol; i <= endCol; i++) {
             result[startRow][i] = counter;
             counter++
         }
         startRow++;
 
-        //с конца вниз по крайним числам
+        //с конца вниз по крайним числам и убрать последнюю колонку
         for (let i = startRow; i <= endRow; i++) {
             result[i][endCol] = counter;
             counter++
