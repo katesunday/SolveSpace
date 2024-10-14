@@ -16,9 +16,49 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
-    //
+    let result = new Array(n).fill("").map(()=> new Array(n).fill(""));
+    //пустая матрица
+    console.log(result)
 
+    let counter = 1;
+    let startCol = 0;
+    let endCol = n-1;
+    let startRow = 0;
+    let endRow = n-1;
+
+    while (startCol <= endCol && startRow <= endRow){
+        //слева направо до конца
+        for (let i = startCol; i <= endCol; i++) {
+            result[startRow][i] = counter;
+            counter++
+        }
+        startRow++;
+
+        //с конца вниз по крайним числам
+        for (let i = startRow; i <= endRow; i++) {
+            result[i][endCol] = counter;
+            counter++
+        }
+        endCol--;
+
+        //снизу справа налево
+        for (let i = endCol; i >= startCol; i--) {
+            result[endRow][i] = counter;
+            counter++
+        }
+        endRow--;
+
+        //снизу по первым числам вверх
+        for (let i = endRow; i >= startRow; i--) {
+            result[i][startCol] = counter
+            counter++
+        }
+        startCol++
+    }
+
+    console.log(result)
+    return result
 
 }
-
+matrix(4)
 module.exports = matrix;
