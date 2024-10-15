@@ -14,6 +14,7 @@ function fib(n) {
        i-1 < 1 ? fibs.push(i) : fibs.push(fibs[i-1] + fibs[i-2]);
     }
     console.log(fibs)
+    return fibs[n];
 }
 fib(7)
 module.exports = fib;
