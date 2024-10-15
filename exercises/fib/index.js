@@ -25,13 +25,11 @@ function fib(n,count = 0, fibs = []) {
     }
     if(count -1 <1){
         fibs.push(count)
-        count++
-        return fib(n,count,fibs)
+        return fib(n,++count,fibs)
 
     }else{
      fibs.push(fibs[count-1] + fibs[count-2])
-        count++
-        return  fib(n,count,fibs)
+        return  fib(n,++count,fibs)
     }
 
 }
