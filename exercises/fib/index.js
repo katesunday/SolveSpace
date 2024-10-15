@@ -17,6 +17,15 @@
 //     return fibs[n];
 // }
 
+function fib(n) {
+    let fibs = [0,1];
+    for (let i = 2; i <= n; ++i) {
+         fibs.push(fibs[i-1] + fibs[i-2]);
+    }
+    console.log(fibs)
+    return fibs[n];
+}
+
 // function fib(n,count = 0, fibs = []) {
 //
 //     if(count > n){
@@ -34,11 +43,27 @@
 //
 // }
 
-function fib(n) {
-    if(n < 2) {
-        return n;
-    }
-    return fib(n - 1) + fib(n - 2);
-}
+// function fib(n) {
+//     if(n < 2) {
+//         return n;
+//     }
+//     return fib(n - 1) + fib(n - 2);
+// }
+//
+// function memoize(fn){
+//     const cache = {};
+//
+//     return function (...args){
+//         if(cache[args]){
+//             return cache[args];
+//         }
+//
+//         const result  = fn.apply(this, args);
+//         cache[args] = result;
+//         return result;
+//     }
+// }
+// fib = memoize(fib)
+
 fib(4)
 module.exports = fib;
