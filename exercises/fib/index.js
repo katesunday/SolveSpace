@@ -17,21 +17,28 @@
 //     return fibs[n];
 // }
 
-function fib(n,count = 0, fibs = []) {
+// function fib(n,count = 0, fibs = []) {
+//
+//     if(count > n){
+//         console.log(fibs[n])
+//         return fibs[n];
+//     }
+//     if(count -1 <1){
+//         fibs.push(count)
+//         return fib(n,++count,fibs)
+//
+//     }else{
+//      fibs.push(fibs[count-1] + fibs[count-2])
+//         return  fib(n,++count,fibs)
+//     }
+//
+// }
 
-    if(count > n){
-        console.log(fibs[n])
-        return fibs[n];
+function fib(n) {
+    if(n < 2) {
+        return n;
     }
-    if(count -1 <1){
-        fibs.push(count)
-        return fib(n,++count,fibs)
-
-    }else{
-     fibs.push(fibs[count-1] + fibs[count-2])
-        return  fib(n,++count,fibs)
-    }
-
+    return fib(n - 1) + fib(n - 2);
 }
-fib(7)
+fib(4)
 module.exports = fib;
