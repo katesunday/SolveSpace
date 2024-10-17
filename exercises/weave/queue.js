@@ -5,8 +5,8 @@
 // removing it.
 
 class Queue {
-  constructor() {
-    this.data = [];
+  constructor(data = []) {
+    this.data = data;
   }
 
   add(record) {
@@ -15,6 +15,9 @@ class Queue {
 
   remove() {
     return this.data.pop();
+  }
+  peek(){
+    return this.data[this.data.length - 1]
   }
 }
 
