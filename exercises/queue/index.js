@@ -13,10 +13,12 @@ class Queue {
         this.queue = queue
     }
     add (item) {
-       this.queue.push(item)
+       //this.queue.push(item)
+       this.queue.unshift(item)
     }
     remove () {
-        return this.queue.shift()
+        //return this.queue.shift()
+        return this.queue.pop()
     }
 }
 
