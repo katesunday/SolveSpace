@@ -35,9 +35,21 @@ class LinkedList {
     }
     getLast(){
         //	Returns the last node of the linked list
-        while(this.head.next !== null){
-            this.head.next
+        let node = this.head
+        if(!this.head){
+            return null
         }
+        // while(this.head.next ){
+        //     this.head = this.head.next
+        //     node = this.head
+        // }
+        while(node){
+            if(!node.next){
+                return node
+            }
+            node = node.next;
+        }
+        return node;
     }
     clear(){
         //Empties the linked list of any nodes.
