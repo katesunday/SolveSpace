@@ -19,13 +19,14 @@ class LinkedList {
     }
     size() {
         let length = 0
+        let node = this.head
         // while(this.head !== null) {
         //  this.head = this.head.next
         //  length++
         // }
-        while(this.head){
+        while(node){
             length++
-            this.head = this.head.next
+           node = node.next;
         }
         return length;
     }
@@ -54,9 +55,14 @@ class LinkedList {
     }
     clear(){
         //Empties the linked list of any nodes.
+        this.head = null;
     }
     removeFirst(){
        // Removes only the first node of the linked list. The list's head should now be the second element.
+        if (!this.head){
+            return
+        }
+        this.head = this.head.next
     }
     removeLast(){
 
@@ -80,16 +86,30 @@ class LinkedList {
 
 const n = new Node('There');
 //console.log(n.data) // 'Hi'
-console.log(n) // null
+//console.log(n) // null
 const n2 = new Node('HOi', n);
-console.log('n2',n2) // returns n
+//console.log('n2',n2) // returns n
 
 const list = new LinkedList();
-console.log(list.head) // null
+//console.log(list.head) // null
 
 list.insertFirst('a');
 list.insertFirst('b');
 list.insertFirst('c');
-console.log("size",list.head,list.size()); // returns 3
+//console.log("size",list,list.size()); // returns 3
+
+const l = new LinkedList();
+l.insertFirst('d');
+l.insertFirst('c');
+l.insertFirst('b');
+l.insertFirst('a');
+l.removeFirst();
+console.log('start',l.head);
+//console.log(l.size());
+console.log('xx',l.head);
+console.log(l.getFirst());
+// l.removeFirst();
+// expect(l.size()).toEqual(1);
+// expect(l.getFirst().data).toEqual('c');
 
 module.exports = { Node, LinkedList };
