@@ -83,8 +83,9 @@ class LinkedList {
 
 
     }
-    insertLast(){
-
+    insertLast(data){
+        let last = this.getLast();
+        last ? last.next = new Node(data) : this.head = new Node(data);
     }
     getAt(index){
         //	Returns the node at the provided index
