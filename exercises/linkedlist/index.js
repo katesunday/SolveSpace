@@ -35,7 +35,7 @@ class LinkedList {
     }
     getLast(){
         //	Returns the last node of the linked list
-        let node = this.head
+
         if(!this.head){
             return null
         }
@@ -43,6 +43,7 @@ class LinkedList {
         //     this.head = this.head.next
         //     node = this.head
         // }
+        let node = this.head
         while(node){
             if(!node.next){
                 return node
