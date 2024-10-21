@@ -15,22 +15,25 @@ class LinkedList {
         this.head = null;
     }
     insertFirst(data){
-        !this.head ? this.head =  new Node(data) : this.head = new Node(data, this.head);
+         this.head = new Node(data, this.head);
     }
     size() {
-        let root = this.head;
-        let length = 0;
-        while (root != null) {
-            root = root.next;
-            ++length;
+        let length = 0
+        while(this.head !== null) {
+         this.head = this.head.next
+         length++
         }
         return length;
     }
     getFirst(){
         //	Returns the first node of the linked list.
+        return this.head
     }
     getLast(){
         //	Returns the last node of the linked list
+        while(this.head.next !== null){
+            this.head.next
+        }
     }
     clear(){
         //Empties the linked list of any nodes.
