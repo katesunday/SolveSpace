@@ -19,9 +19,13 @@ class LinkedList {
     }
     size() {
         let length = 0
-        while(this.head !== null) {
-         this.head = this.head.next
-         length++
+        // while(this.head !== null) {
+        //  this.head = this.head.next
+        //  length++
+        // }
+        while(this.head){
+            length++
+            this.head = this.head.next
         }
         return length;
     }
