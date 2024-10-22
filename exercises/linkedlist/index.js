@@ -102,6 +102,16 @@ class LinkedList {
     }
     removeAt(index){
         //Removes node at the provided index
+        //let toRemove = this.getAt(index);
+        let previous = this.getAt(index-1);
+        let afterRemoved = this.getAt(index+1);
+        if(previous){
+            previous.next = afterRemoved
+        }
+        else{
+            this.head = afterRemoved
+        }
+
     }
     insertAt(data,index){
         //	Create an insert a new node at provided index. If index is out of bounds, add the node to the end of the list.
