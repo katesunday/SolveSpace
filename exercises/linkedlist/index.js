@@ -89,6 +89,16 @@ class LinkedList {
     }
     getAt(index){
         //	Returns the node at the provided index
+        let counter = 0;
+        let node = this.head;
+         while (node) {
+             if (counter === index) {
+                 return node
+             }
+             node = node.next;
+             counter++
+         }
+         return node
     }
     removeAt(index){
         //Removes node at the provided index
@@ -101,10 +111,10 @@ class LinkedList {
     }
 }
 
-const n = new Node('There');
+//const n = new Node('There');
 //console.log(n.data) // 'Hi'
 //console.log(n) // null
-const n2 = new Node('HOi', n);
+//const n2 = new Node('HOi', n);
 //console.log('n2',n2) // returns n
 
 const list = new LinkedList();

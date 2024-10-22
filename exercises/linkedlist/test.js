@@ -147,7 +147,7 @@ describe('InsertLast', () => {
   });
 });
 
-describe.skip('GetAt', () => {
+describe('GetAt', () => {
   test('returns the node at given index', () => {
     const l = new List();
     expect(l.getAt(10)).toEqual(null);
@@ -175,7 +175,7 @@ describe.skip('RemoveAt', () => {
   });
 
   test('removeAt doesnt crash on an index out of bounds', () => {
-    const l = new List();
+    //const l = new List();
     expect(() => {
       const l = new List();
       l.insertFirst('a');
