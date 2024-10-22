@@ -128,11 +128,14 @@ class LinkedList {
         }
     }
     forEach( callback){
-        while(this.head){
-            callback(this.head)
-            this.head = this.head.next
-        }
         //	Calls the provided function with every node of the chain
+        let node = this.head
+        let counter = 0;
+        while(node){
+            callback(node, counter)
+            node = node.next;
+            counter++;
+        }
     }
 }
 
