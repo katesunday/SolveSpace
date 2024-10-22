@@ -115,6 +115,19 @@ class LinkedList {
     }
     insertAt(data,index){
         //	Create an insert a new node at provided index. If index is out of bounds, add the node to the end of the list.
+        let previous = this.getAt(index - 1);
+        let current = this.getAt(index);
+
+        if(index > this.size()){
+            this.insertLast(data)
+            return
+        }
+        if(previous){
+            previous.next = new Node(data, current)
+        }
+        else{
+            this.head = new Node(data, current)
+        }
     }
     forEach(){
         //	Calls the provided function with every node of the chain
