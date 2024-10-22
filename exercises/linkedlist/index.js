@@ -15,15 +15,12 @@ class LinkedList {
         this.head = null;
     }
     insertFirst(data){
-         this.head = new Node(data, this.head);
+         // this.head = new Node(data, this.head);
+        this.insertAt(data,0)
     }
     size() {
         let length = 0
         let node = this.head
-        // while(this.head !== null) {
-        //  this.head = this.head.next
-        //  length++
-        // }
         while(node){
             length++
            node = node.next;
@@ -32,26 +29,24 @@ class LinkedList {
     }
     getFirst(){
         //	Returns the first node of the linked list.
-        return this.head
+        // return this.head
+        return this.getAt(0)
     }
     getLast(){
         //	Returns the last node of the linked list
 
-        if(!this.head){
-            return null
-        }
-        // while(this.head.next ){
-        //     this.head = this.head.next
-        //     node = this.head
+        // if(!this.head){
+        //     return null
         // }
-        let node = this.head
-        while(node){
-            if(!node.next){
-                return node
-            }
-            node = node.next;
-        }
-        return node;
+        // let node = this.head
+        // while(node){
+        //     if(!node.next){
+        //         return node
+        //     }
+        //     node = node.next;
+        // }
+        // return node;
+        return this.getAt(this.size()-1)
     }
     clear(){
         //Empties the linked list of any nodes.
@@ -59,33 +54,36 @@ class LinkedList {
     }
     removeFirst(){
        // Removes only the first node of the linked list. The list's head should now be the second element.
-        if (!this.head){
-            return
-        }
-        this.head = this.head.next
+       //  if (!this.head){
+       //      return
+       //  }
+       //  this.head = this.head.next
+        this.removeAt(0)
     }
     removeLast(){
-        if (!this.head){
-            return;
-        }
-        if (!this.head.next){
-            this.head = null;
-            return;
-        }
-
-        let previous = this.head;
-        let node = this.head.next;
-        while(node.next){
-            previous = node;
-            node = node.next;
-        }
-        previous.next = null;
+        // if (!this.head){
+        //     return;
+        // }
+        // if (!this.head.next){
+        //     this.head = null;
+        //     return;
+        // }
+        //
+        // let previous = this.head;
+        // let node = this.head.next;
+        // while(node.next){
+        //     previous = node;
+        //     node = node.next;
+        // }
+        // previous.next = null;
+        this.removeAt(this.size()-1)
 
 
     }
     insertLast(data){
-        let last = this.getLast();
-        last ? last.next = new Node(data) : this.head = new Node(data);
+        // let last = this.getLast();
+        // last ? last.next = new Node(data) : this.head = new Node(data);
+         this.insertAt(data, this.size());
     }
     getAt(index){
         //	Returns the node at the provided index
@@ -129,7 +127,11 @@ class LinkedList {
             this.head = new Node(data, current)
         }
     }
-    forEach(){
+    forEach( callback){
+        while(this.head){
+            callback(this.head)
+            this.head = this.head.next
+        }
         //	Calls the provided function with every node of the chain
     }
 }
