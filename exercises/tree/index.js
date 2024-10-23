@@ -11,14 +11,18 @@
 // function that gets called with each element in the tree
 
 class Node {
-    constructor(data = []) {
+    constructor(data) {
         this.data = data;
+        this.children = [];
     }
     add(data) {
-
+        const node = new Node(data);
+        this.children.push(node);
     }
     remove(data) {
-
+        return this.children = this.children.filter((el)=>{
+            return el.data !== data
+        })
     }
 }
 
