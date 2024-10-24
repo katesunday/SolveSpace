@@ -30,12 +30,24 @@ class Tree {
     constructor() {
         this.root = null;
     }
-    traverseBF(){
-
+    traverseBF(callback){
+        debugger
+       return  this.root.children.map((el)=>callback(el))
     }
     traverseDF(){
 
     }
 }
+
+const letters = [];
+const t = new Tree();
+t.root = new Node('a');
+t.root.add('b');
+t.root.add('c');
+t.root.children[0].add('d');
+console.log(t)
+console.log(t.traverseBF(node => {
+    letters.push(node.data);
+}));
 
 module.exports = { Tree, Node };
