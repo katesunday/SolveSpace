@@ -39,15 +39,15 @@ class Tree {
     }
 }
 
-const letters = [];
-const t = new Tree();
-t.root = new Node('a');
-t.root.add('b');
-t.root.add('c');
-t.root.children[0].add('d');
-console.log(t)
-console.log(t.traverseBF(node => {
-    letters.push(node.data);
-}));
+// const letters = [];
+// const t = new Tree();
+// t.root = new Node('a');
+// t.root.add('b');
+// t.root.add('c');
+// t.root.children[0].add('d');
+// console.log(t)
+// console.log(t.traverseBF(node => {
+//     letters.push(node.data);
+// }));
 
 module.exports = { Tree, Node };
