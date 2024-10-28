@@ -51,16 +51,26 @@ class Tree {
     }
 }
 
-// const letters = [];
-// const t = new Tree();
-// t.root = new Node('a');
-// t.root.add('b');
-// t.root.add('c');
-// t.root.children[0].add('d');
-//
-// t.traverseBF(node => {
-//    return  letters.push(node.data);
-// });
-//
-// console.log(letters,'letters')
+const letters = [];
+const t = new Tree();
+t.root = new Node('a');
+t.root.add('b');
+t.root.add('c');
+t.root.children[0].add('d');
+
+t.traverseBF(node => {
+   return  letters.push(node.data);
+});
+
+const letters2 = [];
+const t2 = new Tree();
+t2.root = new Node('a');
+t2.root.add('b');
+t2.root.add('d');
+t2.root.children[0].add('c');
+
+t2.traverseDF(node => {
+    letters2.push(node.data);
+});
+console.log(letters2,'letters2')
 module.exports = { Tree, Node };
