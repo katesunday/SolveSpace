@@ -40,7 +40,13 @@ class Tree {
             callback(node)
         }
     }
-    traverseDF(){
+    traverseDF(callback){
+        const arr = [this.root]
+        while(arr.length){
+            let node = arr.shift()
+            arr.unshift(...node.children)
+            callback(node)
+        }
 
     }
 }
