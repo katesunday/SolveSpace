@@ -31,23 +31,30 @@ class Tree {
         this.root = null;
     }
     traverseBF(callback){
-        debugger
-       return  this.root.children.map((el)=>callback(el))
+        const arr = [this.root]
+        //пока есть длина то есть есть элементы внутри
+        while(arr.length){
+            //то узел это первое значение массива
+            let node = arr.shift();
+            arr.push(...node.children)
+            callback(node)
+        }
     }
     traverseDF(){
 
     }
 }
 
-// const letters = [];
-// const t = new Tree();
-// t.root = new Node('a');
-// t.root.add('b');
-// t.root.add('c');
-// t.root.children[0].add('d');
-// console.log(t)
-// console.log(t.traverseBF(node => {
-//     letters.push(node.data);
-// }));
+const letters = [];
+const t = new Tree();
+t.root = new Node('a');
+t.root.add('b');
+t.root.add('c');
+t.root.children[0].add('d');
 
+t.traverseBF(node => {
+   return  letters.push(node.data);
+});
+
+console.log(letters,'letters')
 module.exports = { Tree, Node };

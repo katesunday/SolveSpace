@@ -44,7 +44,7 @@ describe('Tree', () => {
     t.root.children[0].add('d');
 
     t.traverseBF(node => {
-      letters.push(node.data);
+      return letters.push(node.data);
     });
 
     expect(letters).toEqual(['a', 'b', 'c', 'd']);
