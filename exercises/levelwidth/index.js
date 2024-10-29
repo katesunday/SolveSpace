@@ -15,15 +15,19 @@ const Node = require("./node");
 
 function levelWidth(root) {
     const counters = [0]
-    const arr = []
-    const tree = [root]
-    while(tree.length){
-        let node = tree.shift();
-         arr.push(...node.children)
-        arr.push('x')
-        // console.log(arr)
+    const arr = [root,null]
+    while(arr.length >1){
+        let node = arr.shift();
+
+        if(node === null){
+            counters.push(0)
+            arr.push(null)
+        } else {
+            arr.push(...node.children)
+            counters[counters.length - 1]++
+        }
     }
-    console.log(arr.length)
+    console.log(counters)
     return counters
 }
 
