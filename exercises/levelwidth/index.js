@@ -14,9 +14,12 @@
 const Node = require("./node");
 
 function levelWidth(root) {
+    // массив для пересчета ширины
     const counters = [0]
+    //массив по которому идем
     const arr = [root,null]
     while(arr.length >1){
+        //забираем первый узел
         let node = arr.shift();
 
         if(node === null){
