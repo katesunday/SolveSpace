@@ -17,17 +17,14 @@ class Node {
         this.left = null;
         this.right = null;
     }
-    insert(data, ) {
+    insert(data) {
         if(data < this.data && this.left){
            this.left.insert(data)
-        }
-         if (data < this.data && !this.left){
+        } else if (data < this.data ){
             this.left = new Node(data);
-        }
-         if(data > this.data && this.right){
+        } else if(data > this.data && this.right){
             this.right.insert(data)
-        }
-        if(data > this.data && !this.right){
+        } else if(data > this.data ){
             this.right = new Node(data);
         }
     }
