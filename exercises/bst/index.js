@@ -17,18 +17,18 @@ class Node {
         this.left = null;
         this.right = null;
     }
-    insert(data, node = this) {
-        if(data < node.data && node.left){
-           node.insert(data,node.left)
+    insert(data, ) {
+        if(data < this.data && this.left){
+           this.left.insert(data)
         }
-         if (data < node.data && !node.left){
-            node.left = new Node(data);
+         if (data < this.data && !this.left){
+            this.left = new Node(data);
         }
-         if(data > node.data && node.right){
-            node.insert(data,node.right)
+         if(data > this.data && this.right){
+            this.right.insert(data)
         }
-        if(data > node.data && !node.right){
-            node.right = new Node(data);
+        if(data > this.data && !this.right){
+            this.right = new Node(data);
         }
     }
     contains(data) {
