@@ -1,3 +1,5 @@
+const validate = require("./index");
+
 class Node {
   constructor(data) {
     this.data = data;
@@ -18,4 +20,13 @@ class Node {
   }
 }
 
+const n = new Node(10);
+n.insert(5);
+n.insert(15);
+n.insert(0);
+n.insert(20);
+n.left.left.right = new Node(999);
+console.log(n)
+
+console.log(validate(n))
 module.exports = Node;
