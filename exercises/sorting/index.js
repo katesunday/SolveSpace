@@ -16,18 +16,36 @@ function bubbleSort(arr) {
 }
 
 function selectionSort(arr) {
+    // for (let i = 0; i < arr.length; i++) {
+    //     //представляем что самый маленький элемент в самом начале и сравниваем
+    //     let indexOfMin = i;
+    //     for (let j = i+1; j < arr.length; j++) {
+    //         if(arr[j] < arr[indexOfMin]){
+    //             let lesserIndex = j
+    //             if(lesserIndex !== indexOfMin){
+    //                 let el = arr[i]
+    //                 arr[i] = arr[lesserIndex]
+    //                 arr[lesserIndex] = el
+    //             }
+    //         }
+    //     }
+    // }
+
+    //------------
+
     for (let i = 0; i < arr.length; i++) {
         //представляем что самый маленький элемент в самом начале и сравниваем
         let indexOfMin = i;
         for (let j = i+1; j < arr.length; j++) {
             if(arr[j] < arr[indexOfMin]){
-                let lesserIndex = j
-                if(j !== indexOfMin){
-                    let el = arr[i]
-                    arr[i] = arr[lesserIndex]
-                    arr[lesserIndex] = el
-                }
+                indexOfMin = j
+
             }
+        }
+        if(indexOfMin !== i){
+            let el = arr[indexOfMin]
+            arr[indexOfMin] = arr[i]
+            arr[i] = el
         }
     }
     return arr
