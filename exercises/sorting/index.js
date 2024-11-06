@@ -16,7 +16,20 @@ function bubbleSort(arr) {
 }
 
 function selectionSort(arr) {
-
+    for (let i = 0; i < arr.length; i++) {
+        let indexOfMin = i;
+        for (let j = i+1; j < arr.length; j++) {
+            if(arr[j] < arr[indexOfMin]){
+                let lesserIndex = j
+                if(j !== indexOfMin){
+                    let el = arr[i]
+                    arr[i] = arr[lesserIndex]
+                    arr[lesserIndex] = el
+                }
+            }
+        }
+    }
+    return arr
 }
 
 function mergeSort(arr) {
@@ -28,5 +41,5 @@ function merge(left, right) {
 }
 
 console.log( [100, -40, 500, -124, 0, 21, 7])
-console.log(bubbleSort( [100, -40, 500, -124, 0, 21, 7]))
+console.log(selectionSort( [100, -40, 500, -124, 0, 21, 7]))
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
