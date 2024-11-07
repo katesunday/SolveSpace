@@ -57,6 +57,7 @@ function mergeSort(arr) {
 }
 
 function merge(left, right) {
+    //works for 2 sorted arrays
     let result = [];
     while(left.length || right.length){
         if(left[0] < right[0]){
