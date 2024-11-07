@@ -57,9 +57,23 @@ function mergeSort(arr) {
 }
 
 function merge(left, right) {
-
+    let result = [];
+    while(left.length || right.length){
+        if(left[0] < right[0]){
+            result.push(left.shift());
+        }
+        else{
+            result.push(right.shift());
+        }
+    }
+    return result;
 }
 
-console.log( [100, -40, 500, -124, 0, 21, 7])
-console.log(selectionSort( [100, -40, 500, -124, 0, 21, 7]))
+// console.log( [100, -40, 500, -124, 0, 21, 7])
+// console.log(selectionSort( [100, -40, 500, -124, 0, 21, 7]))
+
+const left = [1, 10];
+const right = [2, 8, 12];
+
+console.log(merge(left, right));
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
