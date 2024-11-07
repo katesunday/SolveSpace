@@ -59,6 +59,18 @@ function mergeSort(arr) {
 function merge(left, right) {
     //works for 2 sorted arrays
     let result = [];
+    // while(left.length || right.length){
+    //     if(left[0] < right[0]){
+    //         result.push(left.shift());
+    //     }
+    //     else{
+    //         result.push(right.shift());
+    //     }
+    // }
+    // return result;
+
+    //-------------------------
+
     while(left.length && right.length){
         if(left[0] < right[0]){
             result.push(left.shift());
@@ -67,7 +79,7 @@ function merge(left, right) {
             result.push(right.shift());
         }
     }
-    return result;
+    return [...result,...left,...right];
 }
 
 // console.log( [100, -40, 500, -124, 0, 21, 7])
