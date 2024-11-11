@@ -90,15 +90,15 @@ function merge(left, right) {
     return [...result,...left,...right];
 }
 
-const left = [1, 10];
-const right = [2, 8, 12];
-
-console.log(merge(left, right));
-
-console.log(mergeSort( [100, -40, 500, -124, 0, 21, 7]))
-
-console.log( [100, -40, 500, -124, 0, 21, 7])
-console.log(selectionSort( [100, -40, 500, -124, 0, 21, 7]))
+// const left = [1, 10];
+// const right = [2, 8, 12];
+//
+// console.log(merge(left, right));
+//
+// console.log(mergeSort( [100, -40, 500, -124, 0, 21, 7]))
+//
+// console.log( [100, -40, 500, -124, 0, 21, 7])
+// console.log(selectionSort( [100, -40, 500, -124, 0, 21, 7]))
 
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
