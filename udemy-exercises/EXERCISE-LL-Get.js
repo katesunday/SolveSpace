@@ -103,14 +103,15 @@ class LinkedList {
         return temp;
     }
 
-	get(data){
+	get(index){
+        if(index < 0 || index >= this.length){
+            return undefined
+        }
         let node = this.head;
-        while(node){
-            if(node.value === data){
-                return node
-            }
+        for (let i = 0; i < index; i++) {
             node = node.next;
         }
+        return node;
     }
 
  }
