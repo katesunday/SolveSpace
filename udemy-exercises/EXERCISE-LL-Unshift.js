@@ -7,8 +7,7 @@ class Node {
 
 class LinkedList {
     constructor(value) {
-        const newNode = new Node(value);
-        this.head = newNode;
+        this.head = new Node(value);
         this.tail = this.head;
         this.length = 1;
     }
@@ -78,17 +77,18 @@ class LinkedList {
         return temp;
     }
     unshift(value) {
+        const newNode = new Node(value);
         if(!this.head){
-            this.head = value;
-            this.length++;
-            return;
+            this.head = newNode;
+            this.tail = newNode;
         }
         else{
             let list = this.head;
-            this.head = new Node(value);
+            this.head = newNode;
             this.head.next = list;
-            this.length++;
         }
+        this.length++;
+        return this;
     }
 
  }
