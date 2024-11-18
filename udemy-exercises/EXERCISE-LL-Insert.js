@@ -132,6 +132,7 @@ class LinkedList {
         newNode.next = temp.next;
         temp.next = newNode;
         this.length++;
+
         return true
 
     }
